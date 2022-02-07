@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Vivian Creek Trail",
+    "elevation": 11500,
+    "totalDistance": 20,
+    "completed": true,
+    "address": {
+      "street": "Vivian Creek St.",
+      "city": "Forest Falls",
+      "state": "California",
+      "zip": 95241,
+      "country": "United States"
+    },
+    "plannedStartDateTime": "05 Feb 2022 12:00:00",
+    "plannedEndDateTime": "05 Feb 2022 22:00:00",
+    "actualStartDateTime": "05 Feb 2022 12:15:00",
+    "actualEndDateTime": "05 Feb 2022 22:20:00"
+  },
+  {
+    "name": "San Bernardino Peak Trail",
+    "elevation": 10600,
+    "totalDistance": 16,
+    "completed": false,
+    "address": {
+      "street": "San B Street",
+      "city": "San B",
+      "state": "California",
+      "zip": 97352,
+      "country": "United States"
+    },
+    "plannedStartDateTime": "12 Mar 2022 12:00:00",
+    "plannedEndDateTime": "12 Mar 2022 22:00:00",
+    "actualStartDateTime": "12 Mar 2022 12:15:00",
+    "actualEndDateTime": "12 Mar 2022 22:20:00"
+  },
+  {
+    "name": "Mt. Wilson Loop",
+    "elevation": 5600,
+    "totalDistance": 15,
+    "completed": false,
+    "address": {
+      "street": "Chantry Flats St.",
+      "city": "Pasadena",
+      "state": "California",
+      "zip": 94325,
+      "country": "United States"
+    },
+    "plannedStartDateTime": "24 Mar 2022 12:00:00",
+    "plannedEndDateTime": "24 Mar 2022 22:00:00",
+    "actualStartDateTime": "24 Mar 2022 12:15:00",
+    "actualEndDateTime": "24 Mar 2022 22:20:00"
+  }
+]
