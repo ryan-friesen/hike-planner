@@ -2,16 +2,15 @@ import styles from './styles.module.css';
 
 /** JSDoc: shortcut = /** then press enter when above a function.
  * @param {Object} props
- * @param {string} props.name
- * @param {number} props.duration
+ * @param {Object} props.hike
  */
 const Hike = (props) => {
   console.log('props: ', props);
   // console.log(styles);
   return (
     <div className={`${styles.containerBorder}`}>
-      <h2>Name: {props.name}</h2>
-      <p>Duration: {props.duration}</p>
+      <h2>Name: {props.hike.name}</h2>
+      <p>Complete: {props.hike.completed ? '✅' : '❌'}</p>
     </div>
   );
 };
