@@ -3,6 +3,7 @@ import './App.css';
 import Wrapper from './components/styled-components/Wrapper';
 import Hike from './components/Hike';
 import hikes from './data/hikes.json';
+import Address from './components/Address';
 
 const jsxTest = (
   <p>
@@ -32,8 +33,12 @@ function App() {
        */}
       {hikes.map((hike, i) => {
         // Every child of an array must have a unique key attribute added.
-        return <Hike key={i} hike={hike} />;
-      })}
+
+        return ([<Hike key={i} hike={hike} />,
+        <Address key={i} hike={hike} />]);
+
+      }
+      )}
     </Wrapper>
   );
 }

@@ -5,7 +5,6 @@ import styles from './styles.module.css';
  * @param {Object} props.hike
  */
 const Hike = (props) => {
-  console.log('props: ', props);
   // console.log(styles);
   return (
     <div className={`${styles.containerBorder}`}>
