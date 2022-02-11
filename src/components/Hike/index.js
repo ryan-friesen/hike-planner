@@ -8,12 +8,10 @@ import Address from '../Address';
 const Hike = (props) => {
   // console.log(styles);
   return (
-    <div className={`${styles.containerBorder}`}>
+    <div className={[styles.hike].join(' ')}>
       <h2>Name: {props.hike.name}</h2>
       <p>Complete: {props.hike.completed ? '✅' : '❌'}</p>
-      <p>
-        Address: <Address address={props.hike.address} />
-      </p>
+      <Address address={props.hike.address} />
     </div>
   );
 };
