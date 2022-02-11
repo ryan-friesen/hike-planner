@@ -29,12 +29,48 @@ const Address = (props) => {
   Destructuring can be done directly in the param section between the
   parentheses of the function
   */
-  const { street, city, state, zip, country } = props.address;
+  // const { street, city, state, zip, country } = props.address;
+  // const { inline = false } = props;
+
+  const {
+    inline = false,
+    address: { street, city, state, zip, country },
+  } = props;
+
+  if (inline) {
+    // Inside of a return, you must use a ternary instead of an if/else block.
+    return (
+      <span className={`${styles.addressContainer}`}>
+        {street}, {city}, {state}, {zip},{' '}
+        {country === 'United States' ? 'USA' : country}
+      </span>
+    );
+  }
+
+  // no else is needed because the return above will exit function if executed
   return (
-    <span className={`${styles.addressContainer}`}>
-      {street}, {city}, {state}, {zip}, {country}
-    </span>
+    <div style={{ marginTop: '0.5rem', textDecoration: 'underline' }}>
+      <p>{street}</p>
+      <p>
+        {city} {state} {zip}
+      </p>
+    </div>
   );
+
+  /* Alternatively, instead of two conditional returns, you can use a ternary */
+  // return inline ? (
+  //   <span className={`${styles.addressContainer}`}>
+  //     {street}, {city}, {state}, {zip},{' '}
+  //     {country === 'United States' ? 'USA' : country}
+  //   </span>
+  // ) : (
+  //   <div style={{ marginTop: '0.5rem', textDecoration: 'underline' }}>
+  //     <p>{street}</p>
+  //     <p>
+  //       {city} {state} {zip}
+  //     </p>
+  //   </div>
+  // );
 };
 
 export default Address;
