@@ -1,3 +1,8 @@
+/* 
+Technically .env files are not totally safe for storing secrets. Secrets should
+only be stored in a server, not the front-end.
+*/
+
 import './App.css';
 
 import Wrapper from './components/styled-components/Wrapper';
