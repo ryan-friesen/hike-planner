@@ -8,6 +8,9 @@ import './App.css';
 import Wrapper from './components/styled-components/Wrapper';
 import Hike from './components/Hike';
 import hikes from './data/hikes.json';
+// import {
+//   /* getWeatherByCity, */ getWeatherByLatLong,
+// } from './services/httpService';
 
 const jsxTest = (
   <p>
@@ -22,8 +25,9 @@ child elements.
 */
 console.log(jsxTest);
 
-function App() {
-  console.log('App function component executed.');
+async function App() {
+  // const data = await getWeatherByCity('Seattle', 'US-WA');
+
   return (
     <Wrapper>
       {/* 
