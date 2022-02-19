@@ -8,9 +8,6 @@ import './App.css';
 import Wrapper from './components/styled-components/Wrapper';
 import Hike from './components/Hike';
 import hikes from './data/hikes.json';
-// import {
-//   /* getWeatherByCity, */ getWeatherByLatLong,
-// } from './services/httpService';
 
 const jsxTest = (
   <p>
@@ -25,9 +22,7 @@ child elements.
 */
 console.log(jsxTest);
 
-async function App() {
-  // const data = await getWeatherByCity('Seattle', 'US-WA');
-
+function App() {
   return (
     <Wrapper>
       {/* 
@@ -41,7 +36,6 @@ async function App() {
        */}
       {hikes.map((hike, i) => {
         // Every child of an array must have a unique key attribute added.
-
         return <Hike key={i} hike={hike} />;
       })}
     </Wrapper>
