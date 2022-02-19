@@ -7,9 +7,9 @@
     "address": {
       "street": "Vivian Creek St.",
       "city": "Forest Falls",
-      "state": "California",
-      "zip": 95241,
-      "country": "Divided States"
+      "country": "US",
+      "state": "CA",
+      "zip": 95241
     },
     "plannedStartDateTime": "05 Feb 2022 12:00:00",
     "plannedEndDateTime": "05 Feb 2022 22:00:00",
@@ -23,10 +23,10 @@
     "completed": false,
     "address": {
       "street": "San B Street",
-      "city": "San B",
-      "state": "California",
-      "zip": 97352,
-      "country": "United States"
+      "city": "Big Bear",
+      "country": "US",
+      "state": "CA",
+      "zip": 97352
     },
     "plannedStartDateTime": "12 Mar 2022 12:00:00",
     "plannedEndDateTime": "12 Mar 2022 22:00:00",
@@ -41,9 +41,9 @@
     "address": {
       "street": "Chantry Flats St.",
       "city": "Pasadena",
-      "state": "California",
-      "zip": 94325,
-      "country": "United States"
+      "country": "US",
+      "state": "CA",
+      "zip": 94325
     },
     "plannedStartDateTime": "24 Mar 2022 12:00:00",
     "plannedEndDateTime": "24 Mar 2022 22:00:00",
