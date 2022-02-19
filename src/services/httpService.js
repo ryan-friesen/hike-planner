@@ -8,7 +8,46 @@ changes, we only need to change it here and not everywhere the API is being
 called.
 */
 
-import axios from 'axios';
+import axios, {
+  /* eslint-disable no-unused-vars */ AxiosResponse,
+} from 'axios';
+
+/**
+ * @typedef {object} WeatherResponse
+ * @property {object} coord
+ * @property {number} coord.lon
+ * @property {number} coord.lat
+ * @property {object[]} weather
+ * @property {number} weather.id
+ * @property {string} weather.main
+ * @property {string} weather.description
+ * @property {string} weather.icon
+ * @property {string} base
+ * @property {object} main
+ * @property {number} main.temp
+ * @property {number} main.feels_like
+ * @property {number} main.temp_min
+ * @property {number} main.temp_max
+ * @property {number} main.pressure
+ * @property {number} main.humidity
+ * @property {number} visibility
+ * @property {object} wind
+ * @property {number} wind.speed
+ * @property {number} wind.deg
+ * @property {object} clouds
+ * @property {number} clouds.all
+ * @property {number} dt
+ * @property {object} sys
+ * @property {number} sys.type
+ * @property {number} sys.id
+ * @property {string} sys.country
+ * @property {number} sys.sunrise
+ * @property {number} sys.sunset
+ * @property {number} timezone
+ * @property {number} id
+ * @property {string} name
+ * @property {number} cod
+ */
 
 /**
  * Prepends the base URL to the endpoint and appends the API key.
@@ -25,6 +64,7 @@ const makeWeatherApiUrl = (endpoint) => {
  * ```
  * getWeatherByCity('Seattle', 'US-WA');
  * ```
+ * @returns {Promise<AxiosResponse<WeatherResponse>>}
  */
 export const getWeatherByCity = async (city, stateCode) => {
   return axios.get(makeWeatherApiUrl(`q=${city},${stateCode}`));
@@ -33,6 +73,7 @@ export const getWeatherByCity = async (city, stateCode) => {
 /**
  * @param {string} latitude
  * @param {string} longitude
+ * @returns {Promise<AxiosResponse<WeatherResponse>>}
  */
 export const getWeatherByLatLong = async (latitude, longitude) => {
   return axios.get(makeWeatherApiUrl(`lat=${latitude}&lon=${longitude}`));
