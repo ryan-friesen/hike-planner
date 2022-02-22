@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getWeatherByCity } from '../../services/httpService';
 import { CircleLoader } from 'react-spinners';
 import { css } from '@emotion/react';
+import { colors } from '../../theme';
 
 const Weather = (props) => {
   // Render nothing if props.address isn't passed in.
@@ -22,6 +23,15 @@ const Weather = (props) => {
     display: block;
   `;
 
+  const loadingColors = [
+    Object.values(colors.locations.forestFalls.icicleStream.icicle),
+    Object.values(colors.locations.genevaPresbyterianChurchStorm.sky),
+    Object.values(colors.locations.heislerPark.sunset),
+  ];
+
+  const randomLoadingColor =
+    loadingColors[Math.floor(Math.random() * (loadingColors.length + 1))];
+
   /* 
   An empty array in the second argument will specify useEffect to run only when
   the component is first executed
@@ -39,7 +49,7 @@ const Weather = (props) => {
         .finally(() => {
           setLoading(false);
         });
-    }, Math.floor(Math.random() * (3500 - 1500) + 1500));
+    }, Math.floor(Math.random() * (4000 - 2000) + 2000));
   }, []);
 
   if (error) {
@@ -49,7 +59,11 @@ const Weather = (props) => {
   return (
     <div>
       <h3>Weather</h3>
-      <CircleLoader loading={loading} css={loaderCss} color={'#4287f5'} />
+      <CircleLoader
+        loading={loading}
+        css={loaderCss}
+        color={randomLoadingColor}
+      />
       {weather && <p>Temp: {weather.main.temp}</p>}
     </div>
   );
