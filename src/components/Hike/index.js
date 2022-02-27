@@ -1,6 +1,6 @@
 import styles from './styles.module.css';
-import Address from '../Address';
-import Weather from '../Weather';
+import Address from 'components/Address';
+import Weather from 'components/Weather';
 
 // Typedef auto generator: https://transform.tools/json-to-jsdoc
 
