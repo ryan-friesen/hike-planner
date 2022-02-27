@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { getWeatherByCity } from '../../services/httpService';
+import { getWeatherByCity } from 'services/httpService';
+import { kelvinToFahrenheit, metersToMPH } from 'utils';
 import { CircleLoader } from 'react-spinners';
 import { css } from '@emotion/react';
-import { colors } from '../../theme';
+import { colors } from 'theme';
 
 const Weather = (props) => {
   // Render nothing if props.address isn't passed in.
@@ -64,7 +65,12 @@ const Weather = (props) => {
         css={loaderCss}
         color={randomLoadingColor}
       />
-      {weather && <p>Temp: {weather.main.temp}</p>}
+      {weather && (
+        <div>
+          <p>Temp: {kelvinToFahrenheit(weather.main.temp)} degrees</p>
+          <p>Wind speed: {metersToMPH(weather.wind.speed)} mph</p>
+        </div>
+      )}
     </div>
   );
 };
