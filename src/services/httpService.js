@@ -13,6 +13,7 @@ import axios, {
 } from 'axios';
 
 /**
+ * @see https://openweathermap.org/current#:~:text=wind.speed%20Wind%20speed.,%2C%20Imperial%3A%20miles%2Fhour.
  * @typedef {object} WeatherResponse
  * @property {object} coord
  * @property {number} coord.lon
@@ -32,7 +33,7 @@ import axios, {
  * @property {number} main.humidity
  * @property {number} visibility
  * @property {object} wind
- * @property {number} wind.speed
+ * @property {number} wind.speed meters/sec
  * @property {number} wind.deg
  * @property {object} clouds
  * @property {number} clouds.all
