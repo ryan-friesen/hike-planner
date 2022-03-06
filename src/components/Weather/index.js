@@ -54,23 +54,24 @@ const Weather = (props) => {
   }, []);
 
   if (error) {
-    return null;
+    console.log('weather api error:', error);
   }
 
   return (
     <div>
-      <h3>Weather</h3>
+      <h3>Weather:</h3>
       <CircleLoader
         loading={loading}
         css={loaderCss}
         color={randomLoadingColor}
       />
       {weather && (
-        <div>
+        <>
           <p>Temp: {kelvinToFahrenheit(weather.main.temp)} degrees</p>
           <p>Wind speed: {metersToMPH(weather.wind.speed)} mph</p>
-        </div>
+        </>
       )}
+      {error && <span style={{ color: 'red' }}>N/A</span>}
     </div>
   );
 };
