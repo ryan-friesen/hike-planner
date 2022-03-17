@@ -18,6 +18,10 @@ import styles from './styles.module.css';
  * @param {Props} props
  */
 const Address = (props) => {
+  if (!props.address) {
+    return null;
+  }
+
   /*
   Below is an example of destructuring an object- in this case,
   props.address that was declared and initialized on lines 13 and 14
