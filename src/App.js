@@ -5,9 +5,9 @@ only be stored in a server, not the front-end.
 
 import './App.css';
 
-import Wrapper from './components/styled-components/Wrapper';
-import Hike from './components/Hike';
-import hikes from './data/hikes.json';
+import Wrapper from 'components/styled-components/Wrapper';
+import Hike from 'components/Hike';
+import hikes from 'data/hikes.json';
 
 const jsxTest = (
   <p>
