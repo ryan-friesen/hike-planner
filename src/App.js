@@ -8,7 +8,7 @@ import './App.css';
 import { useState } from 'react';
 import Wrapper from 'components/styled-components/Wrapper';
 import Hike from 'components/Hike';
-import hikes from 'data/hikes.json';
+import initialHikes from 'data/hikes.json';
 
 const jsxTest = (
   <p>
@@ -27,6 +27,8 @@ function App() {
   const [name, setName] = useState('');
   const [elevation, setElevation] = useState('');
 
+  const [hikes, setHikes] = useState(initialHikes);
+
   const handleSubmitHike = (event) => {
     /* 
     This blocks the default behavior (page refresh) of form submission
@@ -35,8 +37,15 @@ function App() {
     event.preventDefault();
     const newHike = { name: name, elevation: elevation };
     console.log(newHike);
-    setName('');
-    setElevation('');
+    /* 
+    DO NOT mutate state directly.
+    Whenever state is not a primitive (an array / object), you must copy it
+    before changing it, then pass the updated copy to the set state function.
+    */
+    const updatedHikes = [...hikes, newHike];
+    setHikes(updatedHikes);
+    // setName('');
+    // setElevation('');
   };
 
   return (
